@@ -7,7 +7,7 @@ Version changes later go through a Change Request (`/change`).
 
 | Item | Version | Licence | Source checked | Date checked |
 |---|---|---|---|---|
-| Python | | PSF | | |
+| Python | Python 3.12.16 | PSF | | |
 | uv | | | | |
 | Git | | | | |
 | Docker | | | | |
