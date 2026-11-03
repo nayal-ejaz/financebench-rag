@@ -12,14 +12,15 @@ Version changes later go through a Change Request (`/change`).
 | Git | | | | |
 | Docker | | | | |
 
+
 ## Runtime libraries
 
 | Library | Version | Licence | Source checked | Date checked |
 |---|---|---|---|---|
 | fastapi | | | | |
 | uvicorn | | | | |
-| pydantic | | | | |
-| pydantic-settings | | | | |
+| pydantic | 2.14.2 | MIT | https://pypi.org/project/pydantic/ | 2026-11-03 |
+| pydantic-settings | 2.16.2 | MIT | https://pypi.org/project/pydantic-settings/ | 2026-11-03 |
 | pypdf | | | | |
 | rank-bm25 | | | | |
 | numpy | | | | |
@@ -31,11 +32,18 @@ Version changes later go through a Change Request (`/change`).
 
 | Library | Version | Licence | Source checked | Date checked |
 |---|---|---|---|---|
-| pytest | | | | |
-| ruff | | | | |
+| pytest | 9.2.0 | MIT | https://pypi.org/project/pytest/ | 2026-11-03 |
+| ruff | 0.17.3 | MIT | https://pypi.org/project/ruff/ | 2026-11-03 |
 | statsmodels (reference values only) | | | | |
 | pytest-cov | | | | |
 | pip-audit (or alternative) | | | | |
+
+## CI actions
+
+| Action | Version | Licence | Source checked | Date checked |
+|---|---|---|---|---|
+| actions/checkout | v6 | MIT | https://github.com/actions/checkout/releases | 2026-11-03 |
+| astral-sh/setup-uv | v8.1.0 | VERIFY | https://github.com/astral-sh/setup-uv/releases | 2026-11-03 |
 
 ## Models
 
