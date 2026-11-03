@@ -51,8 +51,8 @@ Version changes later go through a Change Request (`/change`).
 |---|---|---|---|---|---|---|
 | Embeddings | | | | | | |
 | Reranker | | | | n/a | | |
-| Answer LLM | | Provider terms | n/a | n/a | | |
-| Judge LLM | | Provider terms | n/a | n/a | | |
+| Answer LLM | gemini-3.5-flash-lite | Provider terms | n/a | n/a | https://ai.google.dev/pricing (ID); AI Studio rate-limit page (availability) | 2026-11-03 |
+| Judge LLM | gemini-3.1-flash-lite | Provider terms | n/a | n/a | https://ai.google.dev/pricing (ID); AI Studio rate-limit page (availability) | 2026-11-03 |
 
 ## Recorded defaults and limits
 
@@ -60,9 +60,10 @@ Version changes later go through a Change Request (`/change`).
 |---|---|---|---|
 | rank-bm25 `BM25Okapi` default k1 | | | |
 | rank-bm25 `BM25Okapi` default b | | | |
-| Gemini answer model free tier: RPM / RPD / TPM | | AI Studio | |
-| Gemini judge model free tier: RPM / RPD / TPM | | AI Studio | |
-| Gemini paid price per 1M input / output tokens (for cost estimates) | | | |
+| Gemini answer model free tier (gemini-3.5-flash-lite): RPM / RPD / TPM | 15 / 500 / 250K | AI Studio rate-limit page, owner's project | 2026-11-03 |
+| Gemini judge model free tier (gemini-3.1-flash-lite): RPM / RPD / TPM | 15 / 500 / 250K | AI Studio rate-limit page, owner's project | 2026-11-03 |
+| Gemini paid price per 1M input / output tokens, gemini-3.5-flash-lite (text) | $0.30 / $2.50 | https://ai.google.dev/pricing | 2026-11-03 |
+| Gemini paid price per 1M input / output tokens, gemini-3.1-flash-lite (text) | $0.25 / $1.50 | https://ai.google.dev/pricing | 2026-11-03 |
 
 ## Dataset
 

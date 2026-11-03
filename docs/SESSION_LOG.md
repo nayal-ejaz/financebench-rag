@@ -114,3 +114,11 @@ SESSION LOG ENTRY:
   - Next: S1.4 Gemini API access
 SUGGESTED COMMIT: docs: log S1.3
 NEXT TASK: S1.4 Gemini API access
+
+
+## 2026-11-03 S1.4
+- Did: Created a Gemini API key in AI Studio, stored in .env only. Read the free-tier limits from the AI Studio rate-limit page and chose answer and judge models. Recorded model IDs, limits and paid prices in VERSIONS.md. Added rules 12 and 13 to Section 0 of CLAUDE.md and PROJECT_SPEC.md.
+- Verified by: `git check-ignore -v .env` shows .env ignored by .gitignore; `git grep -E "AIza[0-9A-Za-z_-]{35}"` returns nothing.
+- Problems and fixes: `git grep -i "AIza"` matched the roadmap's own instruction text (switched to the full key pattern); the rate-limit table first showed only one row ("See more" expands it).
+- Open questions: model ID strings came from the pricing page, not AI Studio "Get code"; confirm in A5.1 when code first calls the model. Line-ending-only changes in 8 files on main still to be discarded or committed. Trunk-based or branch per task still open.
+- Next: D2.1 Licence check, manifest and download script

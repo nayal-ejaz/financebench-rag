@@ -52,11 +52,12 @@ You are new to Python projects. These tasks build the habits used everywhere els
   - Test: settings load with defaults; an invalid value (for example `CHUNK_OVERLAP=-1`) raises an error.
   - **Done when:** CI is green on the pull request and the config tests pass.
 
-- [ ] **S1.4 Gemini API access**
+- [x] **S1.4 Gemini API access**
   - Create an API key in Google AI Studio. Put it in `.env` only.
   - In AI Studio, record the chosen answer and judge model IDs and their free-tier limits (RPM, RPD, TPM) in VERSIONS.md with the date.
   - Note in DECISIONS.md that free-tier prompts may be used by Google, and why that is acceptable here.
-  - **Done when:** VERSIONS.md has the model IDs and limits, and `git grep -i "AIza"` (the usual Google key prefix) returns nothing.
+  - **Done when:** VERSIONS.md has the model IDs and limits, and `git grep -E "AIza[0-9A-Za-z_-]{35}"` (the shape of a Google API key) returns nothing.
+  - S1.4 note: models chosen are `gemini-3.5-flash-lite` (answer) and `gemini-3.1-flash-lite` (judge). The check pattern was changed from the bare `AIza` prefix, which matched this line itself.
 
 ---
 
