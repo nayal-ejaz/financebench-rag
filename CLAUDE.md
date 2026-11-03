@@ -19,6 +19,8 @@
 9. **Record decisions** in `docs/DECISIONS.md` with a link to the task.
 10. **Style:** British English, no emojis, short sentences. Python: type hints, small functions, docstrings on public functions, no clever one-liners.
 11. **The test split is sealed.** No code, prompt or setting may be changed based on test-split results. Only task E6.9 runs on the test split.
+12. **Stripped down first.** Every implementation starts as the smallest version that could work: no defensive checks, configuration, abstractions, files or lines that are not yet needed. Reinforcement (validation, error handling, extra structure, extra config, extra files) is added only after the owner has written the stripped-down version, run it and hit the failure, debugged it in VS Code with guidance (questions and hints, not answers), and worked out why the reinforcement is needed. The AI never hands over the reinforced version first. A structure named up front in the roadmap (for example the `src/` layout) is deferred until the owner runs into the problem it solves.
+13. **"wrap" means the AI updates the docs.** When the owner finishes a task and sends `wrap`, the AI updates the docs itself, without being asked again: append the session log entry to `docs/SESSION_LOG.md` (newest last); add one entry per decision to `docs/DECISIONS.md` with the task ID; tick the task in `ROADMAP.md` and record any roadmap changes (deferrals, merges, scope cuts); update any other doc the task changed (for example `docs/VERSIONS.md`, `CLAUDE.md`). It writes to the owner's repo folder. If the folder is not reachable, it says so and asks the owner to connect it; it does not skip the update. Afterwards it lists the changed files in one or two lines. The owner reviews and commits.
 
 ---
 
