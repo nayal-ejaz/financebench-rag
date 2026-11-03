@@ -15,19 +15,19 @@ You are new to Python projects. These tasks build the habits used everywhere els
   - Learn: what a virtual environment is and why each project has its own.
   - **Done when:** `uv --version`, `git --version` and `uv run python --version` all print a version in a new terminal.
 
-- [ ] **R0.2 Python project basics kata**
+- [x] **R0.2 Python project basics kata**
   - `uv init` a scratch project. Write `slugify(text: str) -> str` with type hints and a docstring.
   - Add `pytest` and `ruff` as dev dependencies. Write 4 tests, including an empty string.
   - Learn: `pyproject.toml`, the lock file, `src/` layout, how pytest finds tests.
   - **Done when:** `uv run pytest` shows 4 passed and `uv run ruff check .` shows no errors.
 
-- [ ] **R0.3 FastAPI kata**
+- [x] **R0.3 FastAPI kata**
   - In the scratch project, build `GET /hello?name=...` returning `{"message": "Hello, <name>"}` with a Pydantic response model.
   - Test it with FastAPI's `TestClient`.
   - Learn: request validation, response models, the auto-generated `/docs` page.
   - **Done when:** the test passes, and `/docs` opens in a browser while `uv run uvicorn ...` is running.
 
-- [ ] **R0.4 Git and CI kata**
+- [x] **R0.4 Git and CI kata**
   - Push the scratch project to a GitHub repo. Create a branch, commit with a Conventional Commit message, open a pull request.
   - Add a GitHub Actions workflow that runs ruff and pytest.
   - **Done when:** the pull request shows a green check from the workflow.
@@ -36,17 +36,17 @@ You are new to Python projects. These tasks build the habits used everywhere els
 
 ## Phase S1: Setup
 
-- [ ] **S1.1 Create the repo skeleton**
+- [x] **S1.1 Create the repo skeleton**
   - New GitHub repo `financebench-rag`. Create the layout in spec Section 14 with empty `__init__.py` files.
   - Copy in `CLAUDE.md` (this spec), `ROADMAP.md`, `docs/*.md`, `.env.example`, `.gitignore`.
   - **Done when:** `git ls-files` lists all of the above and no `.env` file.
 
-- [ ] **S1.2 Pin versions**
+- [x] **S1.2 Pin versions**
   - Choose the current stable versions of Python and every library in spec Section 4. Check each on its official page or PyPI. Record the version, the date checked and the source URL in `docs/VERSIONS.md`.
   - Confirm the licences of pypdf, PyMuPDF (to confirm why we reject it) and rank-bm25. Record the `rank-bm25` default `k1` and `b` from its source code.
   - **Done when:** `uv sync` succeeds, `uv.lock` is committed, and every row in VERSIONS.md has a version, date and source.
 
-- [ ] **S1.3 CI and settings**
+- [x] **S1.3 CI and settings**
   - `.github/workflows/ci.yml` runs `uv run ruff check .` and `uv run pytest` on push and pull request.
   - `src/finrag/config.py` with `pydantic-settings` reading every variable in `.env.example`, with the defaults from the spec.
   - Test: settings load with defaults; an invalid value (for example `CHUNK_OVERLAP=-1`) raises an error.

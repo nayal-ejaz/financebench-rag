@@ -82,3 +82,35 @@ NEXT TASK: S1.1 Create the repo skeleton
 
 
 
+TASK: S1.3 CI and settings
+STATUS: done (PR #1 merged, CI green)
+FILES CHANGED: src/finrag/config.py, tests/test_config.py,
+  .github/workflows/ci.yml, pyproject.toml, uv.lock, docs/VERSIONS.md
+HOW TO VERIFY: uv run pytest -> 2 passed; uv run ruff check . -> clean;
+  PR #1 shows green checks
+DECISIONS MADE:
+  - config.py holds only CHUNK_WORDS and CHUNK_OVERLAP; other variables
+    are added in the task that first reads them (rule 12)
+  - pytest finds src/ via [tool.pytest.ini_options] pythonpath; making
+    finrag an installable package is deferred until something outside
+    pytest imports it (expected in C3.1)
+  - setup-uv pinned to a full tag (v8.1.0): v8 has no moving major tag
+  - Owner chose to have the AI write ci.yml (plumbing, not RAG learning)
+SPEC OR ROADMAP UPDATES: Tick S1.3. Tick R0.4 (covered by S1.1 and S1.3).
+  S1.3 note: config reads 2 of the .env.example variables, not all
+  (rule 12).
+SESSION LOG ENTRY:
+  ## 2026-11-03 S1.3
+  - Did: Branch, pydantic-settings config with chunk defaults and
+    ge=0 validation, two tests, minimal GitHub Actions CI, first PR.
+  - Verified by: pytest 2 passed, ruff clean, PR #1 green, merged.
+  - Problems and fixes: test functions named check_* not collected
+    (renamed test_*); parameters treated as fixtures (removed); ran
+    pytest from src/ (run from root); ModuleNotFoundError finrag
+    (pythonpath = ["src"]); -1 accepted (Field(ge=0)); first push
+    needed -u. S1.2's pyproject.toml, uv.lock and .python-version
+    were first committed here, not in S1.2.
+  - Open questions: trunk-based or branch per task from S1.4 on.
+  - Next: S1.4 Gemini API access
+SUGGESTED COMMIT: docs: log S1.3
+NEXT TASK: S1.4 Gemini API access
